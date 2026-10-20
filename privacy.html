@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>*,*::before,*::after{box-sizing:border-box}body{margin:0}</style>
+<title>Конфіденційність Журналу робіт</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<style>
+  /* Layout: a single reading column, like a printed policy sheet; section numbers are real clause numbers. */
+  :root {
+    --bg: #F6F8F7;
+    --paper: #FFFFFF;
+    --fg: #1B2421;
+    --muted: #5B6863;
+    --line: #DCE3E0;
+    --accent: #1E6B58;
+    --accent-soft: #E3F0EB;
+    --display: 'Manrope', 'Segoe UI', system-ui, sans-serif;
+    --body: 'Source Serif 4', Georgia, 'Times New Roman', serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #101614; --paper: #161E1B; --fg: #E4ECE8; --muted: #9AA8A2;
+      --line: #2A3531; --accent: #5FC1A4; --accent-soft: #1C2D27; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #101614; --paper: #161E1B; --fg: #E4ECE8; --muted: #9AA8A2;
+    --line: #2A3531; --accent: #5FC1A4; --accent-soft: #1C2D27; color-scheme: dark;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--body);
+    font-size: 17px;
+    line-height: 1.6;
+    padding-left: max(16px, env(safe-area-inset-left, 0px));
+    padding-right: max(16px, env(safe-area-inset-right, 0px));
+    padding-block: 32px 56px;
+  }
+  .sheet {
+    max-width: 44rem;
+    margin: 0 auto;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: clamp(20px, 5vw, 48px);
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  header { display: flex; flex-direction: column; gap: 8px; }
+  .app {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+  h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(28px, 6vw, 38px);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .meta { color: var(--muted); font-size: 15px; margin: 0; }
+  .lead {
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin: 0;
+  }
+  section { display: flex; flex-direction: column; gap: 10px; }
+  h2 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.3;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+    align-items: baseline;
+    text-wrap: balance;
+  }
+  h2 .n { color: var(--accent); font-variant-numeric: tabular-nums; min-width: 1.4em; }
+  p, ul { margin: 0; }
+  ul { padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; }
+  li::marker { color: var(--accent); }
+  strong { font-weight: 600; }
+  .table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; font-size: 15px; line-height: 1.45; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
+  tr:last-child td { border-bottom: 0; }
+  th {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--muted);
+    background: var(--bg);
+  }
+  .contact {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 14px;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+  }
+  .email {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--accent);
+    user-select: all;
+    word-break: break-all;
+  }
+  button {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--fg);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+  }
+  button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<main class="sheet">
+  <header>
+    <span class="app">Журнал робіт</span>
+    <h1>Політика конфіденційності</h1>
+    <p class="meta">Чинна з 20 жовтня 2026 року</p>
+  </header>
+
+  <p class="lead">
+    «Журнал робіт» — застосунок для щоденних звітів про виконану роботу всередині однієї команди.
+    Ми збираємо лише те, що потрібно для звітів і задач. Реклами, аналітики й продажу даних немає.
+  </p>
+
+  <section>
+    <h2><span class="n">1</span>Хто відповідає за дані</h2>
+    <p>
+      Власник і розпорядник персональних даних — <strong>Сергій Соловйов</strong>, розробник і керівник команди,
+      яка користується застосунком. З усіх питань щодо даних пишіть на <strong>relaxman92@gmail.com</strong>.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="n">2</span>Які дані ми збираємо</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Дані</th><th>Навіщо</th></tr></thead>
+        <tbody>
+          <tr><td>Електронна пошта і пароль</td><td>Вхід в особистий кабінет. Пароль зберігається лише в зашифрованому вигляді, його ніхто не бачить.</td></tr>
+          <tr><td>Ім’я та прізвище, посада, відділ</td><td>Щоб керівник бачив, чий це звіт, і міг формувати звіти по відділах.</td></tr>
+          <tr><td>Щоденні звіти: опис дня, години, проблеми, плани</td><td>Облік виконаної роботи.</td></tr>
+          <tr><td>Задачі, коментарі до виконання, прохання (закупівлі, обладнання)</td><td>Постановка задач і контроль їх виконання.</td></tr>
+          <tr><td>Токен push-сповіщень і тип телефона (iOS / Android)</td><td>Надсилання сповіщень про нові задачі, прохання й дедлайни.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      Ми не збираємо геолокацію, контакти, фото, дані про здоров’я чи фінанси, не відстежуємо дії в інших застосунках
+      і не використовуємо рекламні ідентифікатори.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="n">3</span>Підстави для обробки</h2>
+    <p>
+      Дані обробляються відповідно до Закону України «Про захист персональних даних»: на підставі вашої згоди,
+      яку ви надаєте під час реєстрації, і для організації та обліку роботи в команді.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="n">4</span>Хто бачить ваші дані</h2>
+    <ul>
+      <li><strong>Ви</strong> — свої звіти, задачі й прохання.</li>
+      <li><strong>Керівник команди</strong> — звіти, задачі й прохання всіх працівників, а також формує з них підсумкові звіти (PDF).</li>
+      <li><strong>Інші працівники</strong> не бачать ваших звітів.</li>
+    </ul>
+    <p>Ми не продаємо й не передаємо дані третім особам для реклами чи маркетингу.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">5</span>Де зберігаються дані</h2>
+    <p>Для роботи застосунку використовуються такі сервіси:</p>
+    <ul>
+      <li><strong>Supabase</strong> — база даних і вхід в акаунт. Сервери розташовані у Франкфурті (Німеччина, ЄС), дані передаються захищеним з’єднанням.</li>
+      <li><strong>Expo</strong>, <strong>Apple Push Notification service</strong> і <strong>Firebase Cloud Messaging (Google)</strong> — доставка push-сповіщень. Вони отримують лише токен телефона й текст сповіщення.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2><span class="n">6</span>Як довго зберігаються дані</h2>
+    <p>
+      Дані зберігаються, поки існує ваш акаунт. Якщо ви попросите видалити акаунт, ми видалимо його разом зі звітами,
+      задачами й проханнями протягом 30 днів. Токен сповіщень видаляється одразу, коли ви виходите з акаунта.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="n">7</span>Ваші права</h2>
+    <p>Ви маєте право:</p>
+    <ul>
+      <li>знати, які ваші дані зберігаються, і отримати їх копію;</li>
+      <li>виправити ім’я, посаду чи відділ — це можна зробити самостійно у вкладці «Профіль»;</li>
+      <li>вимагати видалення акаунта й усіх даних;</li>
+      <li>відкликати згоду на обробку даних;</li>
+      <li>звернутися зі скаргою до Уповноваженого Верховної Ради України з прав людини.</li>
+    </ul>
+    <p>Щоб скористатися цими правами або видалити акаунт, напишіть на relaxman92@gmail.com з пошти, з якою ви зареєстровані.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">8</span>Діти</h2>
+    <p>Застосунок призначений для роботи в команді й не розрахований на осіб, молодших за 16 років.</p>
+  </section>
+
+  <section>
+    <h2><span class="n">9</span>Зміни політики</h2>
+    <p>
+      Якщо ми змінимо цю політику, нова версія з’явиться на цій сторінці з новою датою.
+      Про суттєві зміни ми повідомимо в застосунку.
+    </p>
+  </section>
+
+  <div class="contact">
+    <span>Контакт з питань даних:</span>
+    <span class="email" id="email">relaxman92@gmail.com</span>
+    <button type="button" id="copy">Скопіювати</button>
+  </div>
+</main>
+
+<script>
+  document.getElementById('copy').addEventListener('click', function () {
+    var btn = this;
+    var email = document.getElementById('email');
+    var done = function () { btn.textContent = 'Скопійовано'; setTimeout(function () { btn.textContent = 'Скопіювати'; }, 1600); };
+    var select = function () {
+      var r = document.createRange(); r.selectNodeContents(email);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    };
+    try {
+      navigator.clipboard.writeText(email.textContent).then(done, select);
+    } catch (e) { select(); }
+  });
+</script>
+</body>
+</html>
